@@ -23,7 +23,7 @@ const greeting = {
   username: "Raushan Kumar",
   title: "Hi all, I'm Raushan",
   subTitle: emoji(
-    "A passion-driven Full Stack Developer & IoT Specialist. I bridge the gap between hardware and software, building scalable, pixel-perfect web applications and intelligent IoT systems."
+    "A passion-driven Full Stack Developer building scalable, pixel-perfect web applications. Focused on clean architecture, performance, and seamless user experiences."
   ),
   resumeLink:
     "/Raushan_Resume_Oc.pdf", // Set to empty to hide the button
@@ -128,7 +128,7 @@ const educationInfo = {
     {
       schoolName: "Jagjiwan College Gaya",
       logo: require("./assets/images/jagjiwan.jpg"),
-      subHeader: "Higher Secondary Education (Bihar Board)",
+      subHeader: "Higher Secondary Education",
       duration: "Apr 2019 – Mar 2021",
       desc: "Gaya, Bihar, India",
       descBullets: []
@@ -170,6 +170,18 @@ const techStack = {
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
+    {
+      role: "Full Stack Developer",
+      company: "Zero To Launch",
+      companylogo: require("./assets/images/developerActivity.svg"),
+      date: "1 Month Internship",
+      desc: "Work on website frontend and backend both",
+      descBullets: [
+        "Designed, developed, tested, and maintained scalable web and mobile applications.",
+        "Worked across both frontend and backend technologies to deliver end-to-end solutions aligned with project requirements.",
+        "Debugged complex issues, optimized application performance, and improved overall system reliability."
+      ]
+    },
     {
       role: "IoT & Embedded Systems Intern",
       company: "Jadavpur University",
