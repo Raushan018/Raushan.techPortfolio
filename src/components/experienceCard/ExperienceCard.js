@@ -1,83 +1,75 @@
-import React, {useState, createRef} from "react";
+import React, { useState, useRef } from "react";
 import "./ExperienceCard.scss";
 import ColorThief from "colorthief";
 
-export default function ExperienceCard({cardInfo, isDark}) {
-  const [colorArrays, setColorArrays] = useState([]);
-  const imgRef = createRef();
+export default function ExperienceCard({ cardInfo, isDark }) {
+  const [dominantColor, setDominantColor] = useState("#ff9966");
+  const imgRef = useRef();
 
-  function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
-  }
-
-  function rgb(values) {
-    return typeof values === "undefined"
-      ? null
-      : "rgb(" + values.join(", ") + ")";
-  }
-
-  const GetDescBullets = ({descBullets, isDark}) => {
-    return descBullets
-      ? descBullets.map((item, i) => (
-          <li
-            key={i}
-            className={isDark ? "subTitle dark-mode-text" : "subTitle"}
-          >
-            {item}
-          </li>
-        ))
-      : null;
+  const getColor = () => {
+    try {
+      const colorThief = new ColorThief();
+      const color = colorThief.getColor(imgRef.current);
+      setDominantColor(`rgb(${color[0]}, ${color[1]}, ${color[2]})`);
+    } catch (e) {
+      console.log("ColorThief Error", e);
+    }
   };
 
   return (
-    <div className={isDark ? "experience-card-dark" : "experience-card"}>
-      <div style={{background: rgb(colorArrays)}} className="experience-banner">
-        <div className="experience-blurred_div"></div>
-        <div className="experience-div-company">
-          <h5 className="experience-text-company">{cardInfo.company}</h5>
-        </div>
+    <div className={`exp-card-wrapper ${isDark ? "dark-mode" : ""}`}>
+      <div className="exp-card">
+        <div className="exp-content">
 
-        <img
-          crossOrigin={"anonymous"}
-          ref={imgRef}
-          className="experience-roundedimg"
-          src={cardInfo.companylogo}
-          alt={cardInfo.company}
-          onLoad={() => getColorArrays()}
-        />
-      </div>
-      <div className="experience-text-details">
-        <h5
-          className={
-            isDark
-              ? "experience-text-role dark-mode-text"
-              : "experience-text-role"
-          }
-        >
-          {cardInfo.role}
-        </h5>
-        <h5
-          className={
-            isDark
-              ? "experience-text-date dark-mode-text"
-              : "experience-text-date"
-          }
-        >
-          {cardInfo.date}
-        </h5>
-        <p
-          className={
-            isDark
-              ? "subTitle experience-text-desc dark-mode-text"
-              : "subTitle experience-text-desc"
-          }
-        >
-          {cardInfo.desc}
-        </p>
-        <ul>
-          <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
-        </ul>
+          {/* FRONT FACE: Logo and Role */}
+          <div className="exp-front">
+            <div className="background-blobs">
+              <div className="blob" id="left"></div>
+              <div className="blob" id="right"></div>
+              <div className="blob" id="bottom"></div>
+            </div>
+
+            <div className="front-inner">
+              <div className="company-title-top">
+                <h4 className="company-name">{cardInfo.company}</h4>
+              </div>
+
+              <div className="logo-box">
+                <img
+                  crossOrigin={"anonymous"}
+                  ref={imgRef}
+                  src={cardInfo.companylogo}
+                  alt={cardInfo.company}
+                  onLoad={getColor}
+                  className="company-logo-img"
+                />
+              </div>
+
+              <div className="exp-details-bottom">
+                <p className="role-name">{cardInfo.role}</p>
+                <small className="exp-badge">{cardInfo.date}</small>
+              </div>
+            </div>
+          </div>
+
+          {/* BACK FACE: Detailed Description */}
+          <div className="exp-back" style={{ '--glow-color': dominantColor }}>
+            <div className="back-inner">
+              <div className="back-header">
+                <strong>Responsibilities</strong>
+              </div>
+              <div className="scroll-area">
+                <p className="exp-desc">{cardInfo.desc}</p>
+                <ul className="exp-bullets">
+                  {cardInfo.descBullets?.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );

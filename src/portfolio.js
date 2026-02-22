@@ -173,7 +173,7 @@ const workExperiences = {
     {
       role: "Full Stack Developer",
       company: "Zero To Launch",
-      companylogo: require("./assets/images/developerActivity.svg"),
+      companylogo: require("./assets/images/programmer.svg"),
       date: "1 Month Internship",
       desc: "Work on website frontend and backend both",
       descBullets: [
@@ -203,6 +203,17 @@ const workExperiences = {
       descBullets: [
         "Analyzed large-scale datasets to identify trends and optimize data models.",
         "Implemented foundational Blockchain concepts for secure, decentralized data verification."
+      ]
+    },
+    {
+      role: "Coming Soon",
+      company: "New Opportunity",
+      companylogo: require("./assets/images/skill.svg"),
+      date: "Future",
+      desc: "Looking forward to new challenges.",
+      descBullets: [
+        "Expanding skills and exploring new horizons.",
+        "Open to innovative projects and collaborations."
       ]
     }
   ]
