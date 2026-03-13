@@ -241,6 +241,10 @@ const bigProjects = {
         {
           name: "GitHub",
           url: "https://github.com/Raushan018"
+        },
+        {
+          name: "Live",
+          url: "https://movie-party-bice.vercel.app/"
         }
       ]
     },
@@ -274,6 +278,21 @@ const bigProjects = {
         {
           name: "GitHub",
           url: "https://github.com/Raushan018"
+        }
+      ]
+    },
+    {
+      image: "/mob.png",
+      projectName: "Mobile Animation Page",
+      projectDesc: "Built a sleek mobile-first animation page using modern CSS and JavaScript. Features smooth transitions, interactive micro-animations, and a visually engaging UI crafted for an immersive mobile browsing experience.",
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018/Mobile-Animation"
+        },
+        {
+          name: "Live",
+          url: "https://mobile-animation.vercel.app/"
         }
       ]
     },

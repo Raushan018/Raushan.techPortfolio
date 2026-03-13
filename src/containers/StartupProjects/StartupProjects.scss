@@ -1,24 +1,13 @@
 @import "../../_globalColor";
 
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
+@keyframes projectTitleShine {
+  0% {
+    background-position: 0% 50%;
+  }
 
-.card-title {
-  color: $titleColor;
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
-}
-
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 17px;
-  line-height: 1.5rem;
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .projects-container {
@@ -52,73 +41,219 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: flex-start;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 380px;
   width: 100%;
-  min-height: 550px;
-  /* Ensure a good minimum size */
+  max-width: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 0 16px 14px;
+  text-align: center;
+  gap: 10px;
+  transition: transform 0.35s ease;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.project-detail {
-  text-align: center;
-  flex-grow: 1;
+.uiverse-card.light {
+  background-color: #fffffe;
+  border: 1px solid $lightBorder1;
+  box-shadow: none;
+}
+
+.uiverse-card.dark {
+  background-color: #161b2d;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
+.uiverse-card::before {
+  content: "";
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: 3px solid #fefefe;
+  background: #55198b;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.uiverse-card > * {
+  z-index: 1;
+}
+
+.uiverse-card .image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #fefefe;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+  background-color: #1468bf;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.uiverse-card .card-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.5s ease;
+  min-height: 70px;
+  opacity: 1;
+  margin-top: 96px;
 }
 
-.project-card-light {
-  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.project-card-dark {
-  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
-}
-
-.project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
-}
-
-.project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
-}
-
-.project-image {
+.uiverse-card .card-info span {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-top: 24px;
+  padding: 0 8px;
+  word-break: break-word;
+  display: inline-block;
+  max-width: 100%;
   position: relative;
-  height: 250px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
+.uiverse-card.light .card-info span {
+  color: #ffffff;
+}
 
-.project-card-footer span.project-tag {
-  background: $buttonColor;
-  color: $lightBackground3;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 4px;
-  display: inline-flex;
-  font-size: 0.75rem;
-  height: 2em;
-  justify-content: center;
-  white-space: nowrap;
+.uiverse-card.dark .card-info span {
+  color: #ffffff;
+}
+
+.uiverse-card .card-info span::after {
+  content: "";
+  display: block;
+  width: 58%;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  opacity: 0.9;
+}
+
+.uiverse-card .card-info p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.uiverse-card.light .card-info p {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.uiverse-card.dark .card-info p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.uiverse-card .project-explanation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  max-height: none;
+  overflow: hidden;
+  transition: all 0.45s ease;
+  transform: translateY(12px);
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 15px;
+  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.uiverse-card .project-explanation * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.uiverse-card .project-explanation p {
+  margin: 0;
+  font-size: 0.9rem;
   line-height: 1.5;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0 0.75em;
-  cursor: pointer;
-  transition: 0.2s ease-in;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-right: 4px;
+  text-align: left;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.uiverse-card .project-explanation ul {
+  margin: 0;
+  padding: 0 4px 0 20px;
+  list-style: disc;
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.uiverse-card .project-explanation li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.uiverse-card .project-explanation li:last-child {
+  margin-bottom: 0;
+}
+
+.uiverse-card.light .project-explanation p {
+  color: rgba(15, 20, 46, 0.96);
+}
+
+.uiverse-card.dark .project-explanation p {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.uiverse-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+  border-color: #ffffff;
+}
+
+.uiverse-card:hover::before {
+  height: 100%;
+  border-bottom: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transform: scale(0.95);
+}
+
+.uiverse-card:hover .card-info {
+  opacity: 0;
+  transform: translate(0, -40%);
+}
+
+.uiverse-card:hover .image {
+  transform: translate(-190%, -150%) scale(1.85);
+}
+
+.uiverse-card:hover .project-explanation {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
@@ -128,13 +263,67 @@
   }
 
   .project-card {
-    min-height: auto;
-    padding: 1rem;
+    max-width: 100%;
+    height: 360px;
   }
 
-  .project-image {
-    height: 200px;
+  .uiverse-card .project-explanation {
+    padding: 18px;
   }
+
+  .uiverse-card .card-info span {
+    font-size: 21px;
+  }
+
+  .uiverse-card .card-info {
+    margin-top: 88px;
+  }
+
+  .uiverse-card:hover .image {
+    transform: translate(-165%, -135%) scale(1.65);
+  }
+}
+
+.card-buttons {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  letter-spacing: 0.03em;
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.card-btn-github {
+  background-color: #24292e;
+  color: #ffffff;
+}
+
+.card-btn-live {
+  background-color: #55198b;
+  color: #ffffff;
 }
 
 .project-button-div {
