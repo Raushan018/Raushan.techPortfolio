@@ -234,14 +234,25 @@ const bigProjects = {
   subtitle: "ENGINEERING ROBUST & SCALABLE SOLUTIONS",
   projects: [
     {
+      image: require("./assets/images/cinesync.png"),
+      projectName: "CineSync – Distributed Real-Time Watch Party",
+      projectDesc: "Architected a room-based event broadcasting system using Socket.io for synchronized video playback across clients. Implemented host authority logic for controlled playback management and managed state synchronization with minimal latency using WebRTC.",
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/smart_lift.png"),
       projectName: "IoT Smart Grid for Elevators",
       projectDesc: "Designed an automated elevator control system integrating Computer Vision for crowd detection, optimizing energy consumption and user wait time.",
       footerLink: [
-        // {
-        //   name: "Visit Website",
-        //   url: ""
-        // }
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018"
+        }
       ]
     },
     {
@@ -249,10 +260,10 @@ const bigProjects = {
       projectName: "AI-Powered Resume ATS",
       projectDesc: "Engineered a full-stack applicant tracking system (ATS) parser. Implemented RESTful APIs with Node.js to score resumes against job descriptions using keyword matching algorithms.",
       footerLink: [
-        // {
-        //   name: "Visit Website",
-        //   url: ""
-        // }
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018"
+        }
       ]
     },
     {
@@ -260,10 +271,10 @@ const bigProjects = {
       projectName: "Adaptive Underwater Image Enhancement",
       projectDesc: "Developed an adaptive system using DSP & Computer Vision to restore underwater image visibility. Achieved ~23% improvement over fixed methods by dynamically estimating depth and adjusting contrast/gamma without deep learning.",
       footerLink: [
-        // {
-        //   name: "Visit Website",
-        //   url: ""
-        // }
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018"
+        }
       ]
     },
     {
@@ -271,10 +282,10 @@ const bigProjects = {
       projectName: "Netflix Clone",
       projectDesc: "Built a fully functional Netflix clone using React.js and TMDB API. Features include dynamic movie trailers (react-youtube), real-time data fetching, genre categorization, and a pixel-perfect responsive UI matching the original platform.",
       footerLink: [
-        // {
-        //   name: "Visit Website",
-        //   url: ""
-        // }
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018"
+        }
       ]
     }
   ],
