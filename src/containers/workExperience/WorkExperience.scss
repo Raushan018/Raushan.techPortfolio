@@ -36,9 +36,49 @@
   }
 }
 
+/* ── Mobile: Horizontal swipe carousel for experience cards ── */
+@media (max-width: 768px) {
+  .experience-container {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 1rem;
+  }
+
+  .experience-cards-div {
+    /* Switch from grid to horizontal flex scroll */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
+    /* Hide scrollbar visually but keep it functional */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Each direct card wrapper snaps into place */
+    > * {
+      flex: 0 0 82%;
+      max-width: 300px;
+      scroll-snap-align: start;
+    }
+  }
+
+  /* Scroll indicator hint — fade out right edge */
+  .experience-container::after {
+    content: "";
+    display: block;
+    pointer-events: none;
+  }
+}
+
+/* Remove the 480px single-column override — superseded by horizontal scroll above */
 @media (max-width: 480px) {
   .experience-cards-div {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+    padding: 0.5rem 0.75rem 2rem 0.75rem;
   }
 }

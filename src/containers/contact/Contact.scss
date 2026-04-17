@@ -53,13 +53,7 @@
 }
 
 /* Media Query */
-@media (max-width: 1380px), (max-width: 768px) {
-  .contact-title {
-    font-size: 56px;
-    font-weight: 400;
-    text-align: center;
-  }
-
+@media (max-width: 1380px) {
   .contact-title {
     font-size: 40px;
     text-align: center;
@@ -79,6 +73,39 @@
   .contact-detail,
   .contact-detail-email {
     font-size: 20px;
+  }
+
+  .contact-image-div {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack the two-column flex into single column */
+  .contact-div-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .contact-subtitle {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .contact-text-div {
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-detail,
+  .contact-detail-email {
+    font-size: 18px;
+    word-break: break-word;
   }
 
   .contact-image-div {

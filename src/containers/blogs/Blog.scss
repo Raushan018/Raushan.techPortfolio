@@ -70,8 +70,45 @@
   }
 }
 
-@media screen and (max-width: 480px) and (min-width: 300px) {
+/* ── Mobile: Horizontal swipe carousel for blog cards ── */
+@media (max-width: 768px) {
+  .blog-main-div {
+    display: block;
+  }
+
   .blog-text-div {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0.5rem 1rem 2rem 1rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Each blog-container (the card) snaps into place */
+    > * {
+      flex: 0 0 85%;
+      max-width: 360px;
+      min-width: 260px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Ensure blog cards have a reasonable height on mobile */
+  .blog-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-text-div > * {
+    flex: 0 0 88%;
+    min-width: 240px;
   }
 }

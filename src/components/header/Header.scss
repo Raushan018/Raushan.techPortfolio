@@ -184,3 +184,143 @@
     font-size: 12px;
   }
 }
+
+/* ── Mobile Nav — Compact floating panel (max-width: 767px) ── */
+@media (max-width: 47.9em) {
+  /* Anchor the absolute panel to the header */
+  .header {
+    position: relative;
+  }
+
+  /* Compact panel — right-aligned below the hamburger */
+  .header .menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 12px;
+    left: auto;
+    width: min(220px, calc(100vw - 24px));
+    z-index: 1000;
+    background-color: $lightBackground1;
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+    transform-origin: top right;
+    transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.22s ease;
+  }
+
+  /* Dark mode panel */
+  .dark-menu.menu {
+    background-color: #1e2336 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  /* Reveal panel on checkbox check */
+  .header .menu-btn:checked ~ .menu {
+    max-height: 480px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ── Panel header row — "Navigation" label + × close button ── */
+  .header li.menu-close-row {
+    display: none;
+  }
+
+  .dark-menu li.menu-close-row {
+    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .menu-heading {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: $subTitle;
+  }
+
+  .menu-close-btn {
+    cursor: pointer;
+    font-size: 15px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.06);
+    color: $subTitle;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .dark-menu .menu-close-btn {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .menu-close-btn:hover {
+    background-color: rgba(85, 25, 139, 0.15);
+    color: $buttonColor;
+  }
+
+  /* Nav link items */
+  .header li {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  .dark-menu li {
+    border-bottom-color: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .header li:last-child {
+    border-bottom: none;
+  }
+
+  .header li a {
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.2px;
+    transition: padding-left 0.18s ease, background-color 0.18s ease;
+  }
+
+  .header li a:hover {
+    background-color: rgba(85, 25, 139, 0.07);
+    padding-left: 20px;
+  }
+
+  .dark-menu li a:hover {
+    background-color: rgba(140, 67, 206, 0.15) !important;
+  }
+
+  /* Toggle switch row */
+  .header li:last-child a {
+    justify-content: center;
+    padding: 10px 16px;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  .dark-menu li:last-child a {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+
+  /* Hamburger icon */
+  .header .menu-icon {
+    padding: 18px 14px;
+  }
+
+  /* Logo */
+  .header .logo {
+    font-size: 1.2em;
+  }
+}

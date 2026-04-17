@@ -34,3 +34,33 @@ body {
     line-height: normal;
   }
 }
+
+/* ── Mobile Global Fixes (max-width: 768px) ── */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Ensure all sections don't bleed outside viewport */
+  .main,
+  .greet-main,
+  .experience-container,
+  .education-section,
+  .skills-container {
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box;
+  }
+
+  /* Minimum touch target size for interactive elements */
+  a,
+  button,
+  [role="button"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}

@@ -41,6 +41,12 @@ function Header() {
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
+          <li className="menu-close-row">
+            <span className="menu-heading">Navigation</span>
+            <label htmlFor="menu-btn" className="menu-close-btn" aria-label="Close menu">
+              &#x2715;
+            </label>
+          </li>
           {viewSkills && (
             <li>
               <a href="#skills">Skills</a>

@@ -51,4 +51,13 @@
   .education-text-subtitle {
     font-size: 16px;
   }
+
+  .education-section {
+    margin-top: 1rem;
+    padding: 10px 0;
+  }
+
+  .education-section > * {
+    margin-bottom: 16px;
+  }
 }

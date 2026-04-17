@@ -242,6 +242,15 @@
   }
 }
 
+/* ── Mobile: card fills the horizontal scroll slot ── */
+@media (max-width: 768px) {
+  .exp-card-wrapper {
+    /* Let the flex container control the width */
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .background-blobs {
   display: none; // Hiding blobs for clean aesthetic
 }

@@ -70,9 +70,29 @@
   gap: 1rem 1rem;
 }
 
-@media (max-width: 480px) {
+/* ── Mobile: Horizontal swipe carousel for achievement cards ── */
+@media (max-width: 768px) {
   .achievement-cards-div {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0.5rem 1rem 2rem 1rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > .certificate-card {
+      flex: 0 0 82%;
+      max-width: 320px;
+      scroll-snap-align: start;
+      /* Prevent cards from shrinking */
+      flex-shrink: 0;
+    }
   }
 }
 

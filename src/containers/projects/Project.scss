@@ -28,14 +28,34 @@
     text-align: center;
   }
 
+  /* ── Horizontal swipe carousel for repo cards ── */
   .repo-cards-div-main {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0.5rem 1rem 2rem 1rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Each github-repo-card snaps into place */
+    > * {
+      flex: 0 0 82%;
+      max-width: 340px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
   }
 }
 
 @media (max-width: 480px) {
-  .repo-cards-div-main {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+  .repo-cards-div-main > * {
+    flex: 0 0 88%;
+    min-width: 260px;
   }
 }

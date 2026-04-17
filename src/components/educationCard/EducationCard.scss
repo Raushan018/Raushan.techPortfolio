@@ -112,7 +112,7 @@
 
 @media (max-width: 768px) {
   .education-card {
-    text-align: center;
+    text-align: left;
   }
   .education-card-right {
     max-width: 100%;
@@ -128,7 +128,7 @@
     margin-right: 0;
   }
   .education-text-bullets > ul {
-    max-width: 80%;
-    margin: auto;
+    max-width: 100%;
+    margin: 0;
   }
 }
