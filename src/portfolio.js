@@ -171,15 +171,15 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Full Stack Developer",
-      company: "Zero To Launch",
-      companylogo: require("./assets/images/programmer.svg"),
-      date: "1 Month Internship",
-      desc: "Work on website frontend and backend both",
+      role: "Full stack Developer Intern",
+      company: "Skillence Tech",
+      companylogo: require("./assets/images/skillence.png"),
+      date: "Feb 26 – Apr 26",
+      desc: "Remote, India",
       descBullets: [
-        "Designed, developed, tested, and maintained scalable web and mobile applications.",
-        "Worked across both frontend and backend technologies to deliver end-to-end solutions aligned with project requirements.",
-        "Debugged complex issues, optimized application performance, and improved overall system reliability."
+        "Contributed as a core full stack engineer in skillence Tech, architecting a scalable Skillence Tech platform using React.js and Tailwind CSS.",
+        "Developed dynamic dashboards, course modules, and authentication flows, improving UX consistency across 10+ pages through reusable component libraries.",
+        "Collaborated with backend engineers to integrate REST APIs, enforcing efficient state management that cut redundant network calls by 30%."
       ]
     },
     {
@@ -222,9 +222,11 @@ const workExperiences = {
 /* Your Open Source Section to View Your Github Pinned Projects
 To know how to get github key look at readme.md */
 
+// Your Open Source Projects
 const openSource = {
   showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  display: true, // Set false to hide this section, defaults to true
+  projects: []
 };
 
 // Some big projects you have worked on
@@ -245,6 +247,21 @@ const bigProjects = {
         {
           name: "Live",
           url: "https://movie-party-bice.vercel.app/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/reflektive.png"),
+      projectName: "Reflektive Landing Page",
+      projectDesc: "A simple landing page for a reflective clothing brand.",
+      footerLink: [
+        {
+          name: "GitHub",
+          url: "https://github.com/Raushan018/Reflektive-landing-main.git"
+        },
+        {
+          name: "Live",
+          url: "https://reflektive-landing-main.vercel.app/"
         }
       ]
     },

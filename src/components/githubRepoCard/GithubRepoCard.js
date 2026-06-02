@@ -39,8 +39,8 @@ export default function GithubRepoCard({ repo, isDark }) {
         <div className="project-explanation">
           <p>{description}</p>
           <div className="project-meta">
-            <span>Stars: {repo.node.stargazers.totalCount}</span>
-            <span>Forks: {repo.node.forkCount}</span>
+            <span>Stars: {repo.node.stargazers ? repo.node.stargazers.totalCount : 0}</span>
+            <span>Forks: {repo.node.forkCount ? repo.node.forkCount : 0}</span>
           </div>
         </div>
       </div>
