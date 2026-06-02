@@ -25,8 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passion-driven Full Stack Developer building scalable, pixel-perfect web applications. Focused on clean architecture, performance, and seamless user experiences."
   ),
-  resumeLink:
-    "/Raushan_Resume_Oc.pdf", // Set to empty to hide the button
+  resumeLink: "/Raushan_Resume_Oc.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -56,7 +55,9 @@ const skillsSection = {
     emoji(
       "⚡ Building responsive Full Stack applications using React.js, Node.js, and Modern Web Technologies"
     ),
-    emoji("⚡ Designing and implementing Real-time IoT Systems with ESP32 and Computer Vision"),
+    emoji(
+      "⚡ Designing and implementing Real-time IoT Systems with ESP32 and Computer Vision"
+    ),
     emoji(
       "⚡ Optimizing performance and scalability of data-driven applications"
     )
@@ -97,7 +98,7 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "java",
       fontAwesomeClassname: "fab fa-java"
-    },
+    }
     // {
     //   skillName: "python",
     //   fontAwesomeClassname: "fab fa-python"
@@ -238,7 +239,8 @@ const bigProjects = {
     {
       image: require("./assets/images/cinesync.png"),
       projectName: "CineSync – Distributed Real-Time Watch Party",
-      projectDesc: "Architected a room-based event broadcasting system using Socket.io for synchronized video playback across clients. Implemented host authority logic for controlled playback management and managed state synchronization with minimal latency using WebRTC.",
+      projectDesc:
+        "Architected a room-based event broadcasting system using Socket.io for synchronized video playback across clients. Implemented host authority logic for controlled playback management and managed state synchronization with minimal latency using WebRTC.",
       footerLink: [
         {
           name: "GitHub",
@@ -268,7 +270,8 @@ const bigProjects = {
     {
       image: require("./assets/images/smart_lift.png"),
       projectName: "IoT Smart Grid for Elevators",
-      projectDesc: "Designed an automated elevator control system integrating Computer Vision for crowd detection, optimizing energy consumption and user wait time.",
+      projectDesc:
+        "Designed an automated elevator control system integrating Computer Vision for crowd detection, optimizing energy consumption and user wait time.",
       footerLink: [
         {
           name: "GitHub",
@@ -279,7 +282,8 @@ const bigProjects = {
     {
       image: require("./assets/images/resume_ats.png"),
       projectName: "AI-Powered Resume ATS",
-      projectDesc: "Engineered a full-stack applicant tracking system (ATS) parser. Implemented RESTful APIs with Node.js to score resumes against job descriptions using keyword matching algorithms.",
+      projectDesc:
+        "Engineered a full-stack applicant tracking system (ATS) parser. Implemented RESTful APIs with Node.js to score resumes against job descriptions using keyword matching algorithms.",
       footerLink: [
         {
           name: "GitHub",
@@ -290,7 +294,8 @@ const bigProjects = {
     {
       image: require("./assets/images/underwater.png"),
       projectName: "Adaptive Underwater Image Enhancement",
-      projectDesc: "Developed an adaptive system using DSP & Computer Vision to restore underwater image visibility. Achieved ~23% improvement over fixed methods by dynamically estimating depth and adjusting contrast/gamma without deep learning.",
+      projectDesc:
+        "Developed an adaptive system using DSP & Computer Vision to restore underwater image visibility. Achieved ~23% improvement over fixed methods by dynamically estimating depth and adjusting contrast/gamma without deep learning.",
       footerLink: [
         {
           name: "GitHub",
@@ -301,7 +306,8 @@ const bigProjects = {
     {
       image: "/mob.png",
       projectName: "Mobile Animation Page",
-      projectDesc: "Built a sleek mobile-first animation page using modern CSS and JavaScript. Features smooth transitions, interactive micro-animations, and a visually engaging UI crafted for an immersive mobile browsing experience.",
+      projectDesc:
+        "Built a sleek mobile-first animation page using modern CSS and JavaScript. Features smooth transitions, interactive micro-animations, and a visually engaging UI crafted for an immersive mobile browsing experience.",
       footerLink: [
         {
           name: "GitHub",
@@ -316,7 +322,8 @@ const bigProjects = {
     {
       image: require("./assets/images/netflix.png"),
       projectName: "Netflix Clone",
-      projectDesc: "Built a fully functional Netflix clone using React.js and TMDB API. Features include dynamic movie trailers (react-youtube), real-time data fetching, genre categorization, and a pixel-perfect responsive UI matching the original platform.",
+      projectDesc:
+        "Built a fully functional Netflix clone using React.js and TMDB API. Features include dynamic movie trailers (react-youtube), real-time data fetching, genre categorization, and a pixel-perfect responsive UI matching the original platform.",
       footerLink: [
         {
           name: "GitHub",
@@ -347,8 +354,7 @@ const achievementSection = {
     },
     {
       title: "Oracle Certified Foundations Associate",
-      subtitle:
-        "AI Foundations (OCI 2025)",
+      subtitle: "AI Foundations (OCI 2025)",
       image: require("./assets/images/oracle_v2.png"),
       imageAlt: "Oracle Logo",
       footerLink: []
@@ -362,7 +368,8 @@ const achievementSection = {
     },
     {
       title: "500+ DSA Problems",
-      subtitle: "Solved 500+ Data Structures & Algorithms problems on Leetcode.",
+      subtitle:
+        "Solved 500+ Data Structures & Algorithms problems on Leetcode.",
       image: require("./assets/images/leetcode_v2.png"),
       imageAlt: "Leetcode Logo",
       footerLink: []

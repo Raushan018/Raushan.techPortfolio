@@ -1,6 +1,6 @@
 import React from "react";
 import "./GithubRepoCard.scss";
-export default function GithubRepoCard({ repo, isDark }) {
+export default function GithubRepoCard({repo, isDark}) {
   function openUrlInNewTab(url, name) {
     if (!url) {
       console.log(`URL in ${name} is undefined`);
@@ -39,7 +39,10 @@ export default function GithubRepoCard({ repo, isDark }) {
         <div className="project-explanation">
           <p>{description}</p>
           <div className="project-meta">
-            <span>Stars: {repo.node.stargazers ? repo.node.stargazers.totalCount : 0}</span>
+            <span>
+              Stars:{" "}
+              {repo.node.stargazers ? repo.node.stargazers.totalCount : 0}
+            </span>
             <span>Forks: {repo.node.forkCount ? repo.node.forkCount : 0}</span>
           </div>
         </div>

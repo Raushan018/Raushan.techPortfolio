@@ -26,7 +26,7 @@
   text-transform: uppercase;
 }
 
-.blog-main-div>* {
+.blog-main-div > * {
   flex: 1;
   margin-bottom: 30px;
 }
@@ -35,7 +35,7 @@
   display: flex;
 }
 
-.blog-image-div>img {
+.blog-image-div > img {
   max-width: 100%;
   height: auto;
 }

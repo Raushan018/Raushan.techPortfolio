@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, {useState, useRef} from "react";
 import "./ExperienceCard.scss";
 import ColorThief from "colorthief";
 
-export default function ExperienceCard({ cardInfo, isDark }) {
+export default function ExperienceCard({cardInfo, isDark}) {
   const [dominantColor, setDominantColor] = useState("#ff9966");
   const imgRef = useRef();
 
@@ -20,7 +20,6 @@ export default function ExperienceCard({ cardInfo, isDark }) {
     <div className={`exp-card-wrapper ${isDark ? "dark-mode" : ""}`}>
       <div className="exp-card">
         <div className="exp-content">
-
           {/* FRONT FACE: Logo and Role */}
           <div className="exp-front">
             <div className="background-blobs">
@@ -53,7 +52,7 @@ export default function ExperienceCard({ cardInfo, isDark }) {
           </div>
 
           {/* BACK FACE: Detailed Description */}
-          <div className="exp-back" style={{ '--glow-color': dominantColor }}>
+          <div className="exp-back" style={{"--glow-color": dominantColor}}>
             <div className="back-inner">
               <div className="back-header">
                 <strong>Responsibilities</strong>
@@ -68,7 +67,6 @@ export default function ExperienceCard({ cardInfo, isDark }) {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
